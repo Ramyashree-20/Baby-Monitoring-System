@@ -1,0 +1,15 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+
+# Model files
+*.pth
+
+# Log files and data
+new_images_to_log/
+sleep_log.csv
+
+# Media files
+soothing_music.mp3

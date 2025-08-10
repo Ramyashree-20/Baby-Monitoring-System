@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Smart Baby Cradle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome, Parent of {{ baby_name }}!</h1>
+    </header>
+    <main class="dashboard-grid">
+        <!-- ADDED BACK: Live Notifications Card -->
+        <div class="grid-item card" id="notifications-card">
+            <h2>Live Notifications</h2>
+            <div id="notifications-list">
+                {% for notif in notifications %}
+                    <p>{{ notif }}</p>
+                {% else %}
+                    <p>No new notifications.</p>
+                {% endfor %}
+            </div>
+            <hr> <!-- A line to separate the sections -->
+            <h2>Vaccination Reminders</h2>
+            <div id="reminders-list">
+                {% for reminder in vaccination_reminders %}
+                    <p>{{ reminder }}</p>
+                {% else %}
+                    <p>No upcoming vaccination reminders.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="grid-item card" id="chatbot-card">
+            <h2>BabyBot Assistant</h2>
+            <div id="chat-window">
+                <div class="bot-message">Hello! Ask me a question.</div>
+            </div>
+            <div id="chat-input">
+                <input type="text" id="user-message" placeholder="Type your question...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div class="grid-item card" id="analysis-card">
+            <h2>Sleep Pattern Analysis</h2>
+            <div id="sleep-graph-container">
+                {{ sleep_graph|safe }}
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

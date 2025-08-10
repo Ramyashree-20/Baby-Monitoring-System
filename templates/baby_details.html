@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Details - Smart Baby Cradle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Enter Your Baby's Details</h2>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Baby's Name" required>
+            <input type="number" name="age" placeholder="Age (in months)" required>
+            <input type="text" name="weight" placeholder="Weight (e.g., 5.5 kg)" required>
+            <input type="text" name="dob" placeholder="Date of Birth" required onfocus="(this.type='date')">
+            <select name="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <button type="submit">Go to Dashboard</button>
+        </form>
+    </div>
+</body>
+</html>

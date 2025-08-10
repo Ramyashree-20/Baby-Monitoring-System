@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['awake', 'cry', 'sleep']
+
+roboflow:
+  workspace: baby-yz6vt
+  project: merge-bgtjw
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/baby-yz6vt/merge-bgtjw/dataset/2
