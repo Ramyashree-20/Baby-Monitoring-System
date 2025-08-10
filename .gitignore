@@ -10,6 +10,7 @@ __pycache__/
 # Log files and data
 new_images_to_log/
 sleep_log.csv
+data/
 
 # Media files
 soothing_music.mp3
